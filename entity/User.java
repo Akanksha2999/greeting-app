@@ -12,7 +12,7 @@ public class User {
 
     @Override
     public String toString() {
-        String fN = (firstName == null) ? "" : firstName + " ";
+        String fN = (firstName == null) ? "" : firstName;
         String lN = (lastName == null) ? "" : lastName;
         return fN+lN;
     }
