@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/greeting")
@@ -34,5 +34,10 @@ public class GreetingController {
     @GetMapping("/getallgreeting")
     public List<Greeting> getAllGreetingMessage() {
         return greetingService.getAllGreetingMessage();
+    }
+
+    @PutMapping("/update/{id}")
+    public Optional<Greeting> updateGreeting(Greeting greeting, @PathVariable("id") Long id) {
+        return greetingService.updateGreeting(greeting, id);
     }
 }
