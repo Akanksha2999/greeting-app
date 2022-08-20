@@ -40,4 +40,10 @@ public class GreetingServiceImpl implements GreetingService {
         greetingRepository.save(greetingObject.get());
         return greetingObject;
     }
+
+    @Override
+    public String deleteGreetingMessageById(Long id) {
+        greetingRepository.deleteById(id);
+        return "Deleted greeting message!!";
+    }
 }
